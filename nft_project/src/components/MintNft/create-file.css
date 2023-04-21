@@ -1,0 +1,89 @@
+.form__input input,
+.form__input textarea {
+  width: 100%;
+  padding: 7px 25px;
+  color: #fff;
+  font-size: 0.8rem;
+  background: transparent;
+  border: 1px solid rgba(221, 221, 221, 0.171);
+  outline: none;
+  border-radius: 5px;
+  cursor:text;
+}
+
+.form__input {
+  margin-bottom: 15px;
+}
+
+.form__input label {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.form__input .upload__input {
+  padding: 40px 25px;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+  .create__item {
+    margin-top: 15px;
+  }
+}
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #5142fc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0d45a5;
+}
+.section{
+  padding:60px 15px;
+}
+.col1
+{
+  width: 300px;
+  background-color: #343444;
+  padding: 15px;
+  background: #343444;
+  border-radius: 10px;
+  margin: 20px;
+
+}
+.col2
+{
+  width: 900px;
+}
+.form__input input
+{
+  width: 820px;
+}
+.form__input textarea
+{
+  width: 820px;
+}
+.form__input label
+{
+  width: 600px;
+}
+.form__input
+{
+  display: grid;
+}
+
+.mint{
+  cursor: pointer;
+  width: 120px;
+  height: 50px;
+}
