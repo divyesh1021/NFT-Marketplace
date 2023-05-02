@@ -41,6 +41,7 @@ function App() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(contract_add,contract_abi,signer);
       setState({provider,signer,contract});
+      console.log("dgvdfgvd");
     }
     Get_Contract();
   },[]);
