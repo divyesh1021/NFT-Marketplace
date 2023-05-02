@@ -8,14 +8,16 @@ import Mint from './components/MintNft/Mint';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
-import { arbitrum, mainnet, polygon } from 'wagmi/chains'
+import { arbitrum, mainnet, polygon,sepolia ,bscTestnet } from 'wagmi/chains'
 import { useState,useEffect } from 'react';
 import Abi from './contracts/NFT.json';
 import { ethers } from 'ethers';
+import SingleNFT from './components/Single-nft/SingleNFT';
+import Buy from './components/BuyNFT/Buy';
 // import NFTCard from './components/NFTCard/NFTCard';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-const chains = [arbitrum, mainnet, polygon];
+const chains = [arbitrum, mainnet, polygon, sepolia, bscTestnet];
 const projectId = 'ade8d95fae5b2c8d95db08d23496f064';
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);
@@ -32,7 +34,7 @@ function App() {
 
   useEffect( () => {
     const Get_Contract = async () => {
-      const contract_add = '0x64bc4849DC7683e9bA90D729346B6eB287f349d6';
+      const contract_add = '0xc265A2229bF745b2Ec801971e4b8327533076C69';
       const contract_abi = Abi.abi;
       const { ethereum } = window;
       const provider = new ethers.providers.Web3Provider(ethereum);
@@ -61,7 +63,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/contact" element={<Contact />}/>
-        <Route path="/Mint-nft" element={<Mint state={State} />}/>
+        <Route path="/mint-nft" element={<Mint state={State} />}/>
+        <Route path="/single-nft" element={<SingleNFT state={State} />}/>
+        <Route path="/buy-nft" element={<Buy state={State} />}/>
       </Routes>
       <Footer />
     </BrowserRouter>

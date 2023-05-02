@@ -5,13 +5,24 @@ import { AiFillHeart , AiOutlineHeart } from 'react-icons/ai';
 import { BsImages } from 'react-icons/bs';
 // import Image from 'next/image';
 import img from '../alien-life.jpg';
+import { Link } from 'react-router-dom';
+
+
+// const { Id,setId } = useState();
 
 const NFTCard = (props) => {
-    const featureArray = [1,2,3,4,5,6,7,8,9];
-    // const { Img } = state;
-    const n = props.state;
+    // const featureArray = [1,2,3,4,5,6,7,8,9];
+    // const [ Id,setId ] = useState();
+    const nftimg = props.state;
+    
+    // const id = nftimg.id;
+    // setId(nftimg);
+    // const nftImg = nftimg.imgUrl;
+    // const data = props.data;
     console.log('tyoenjbf df',typeof(n));
-    console.log('ooooooooooooooooooooooo',n);
+    console.log('nft+list------------------------------------------------',nftimg);
+    // console.log('imgUrl------------------',nftImg);
+    // console.log('ooooooooooooofggfgfgfgfoooooooooo',data);
     const [like,setLike] = useState(true);
 
     const likeNft = () => {
@@ -21,15 +32,19 @@ const NFTCard = (props) => {
             setLike(false);
         }
     }
-
-
+    
   return (
     <div className={Style.NFTCard}>
-        {n.map((el,i)=>(
+        {nftimg.map((el,i)=>(
             <div className={Style.NFTCard_box} key={i+1}>
                 <div className={Style.NFTCard_box_img}>
-                    <img src={el} alt="NFT images" width={600} height={600} className={Style.NFTCard_box_img_img} />
+                    <img src={el.imgUrl} alt="NFT images"  className={Style.NFTCard_box_img_img} />
                 </div>
+                {/* <Link to="/single-nft">View NFT</Link> */}
+
+                {/* <a href="/single-nft"><button className={Style.viewNFT111}>View NFT</button></a> */}
+                <Link className={Style.viewNFT111} to={`/single-nft?${Number(el.id)}`} onClick={""}>View NFT</Link>
+                
                 <div className={Style.NFTCard_box_update}>
                     <div className={Style.NFTCard_box_update_left}>
                         <div className={Style.NFTCard_box_update_left_like} onClick={()=>likeNft()}>
@@ -43,28 +58,29 @@ const NFTCard = (props) => {
                     </div>
                     <div className={Style.NFTCard_box_update_right}>
                         <div className={Style.NFTCard_box_update_right_info}>
-                            <small>Remaining time</small>
-                            <p>3h : 15m : 20s</p>
+                            {/* <small>Remaining time</small>
+                            <p>3h : 15m : 20s</p> */}
                         </div>
                     </div>
                 </div>
                 <div className={Style.NFTCard_box_update_details}>
                     <div className={Style.NFTCard_box_update_details_price}>
                         <div className={Style.NFTCard_box_update_details_price_box}>
-                            <h4>Clone #1236</h4>
+                            {/* <h4>creator</h4> */}
+                            {/* <p>{el.nftcreator}</p> */}
                             <div className={Style.NFTCard_box_update_details_price_box_box}>
                                 <div className={Style.NFTCard_box_update_details_price_box_bid}>
-                                    <small>Current Bid</small>
-                                    <p>1.000ETH</p>
+                                    {/* <small>Current Price</small> */}
+                                    <p>{Number(el.nftprice)} ETH</p>
                                 </div>
                                 <div className={Style.NFTCard_box_update_details_price_box_stock}>
-                                    <small>61 in stock</small>
+                                    {/* <small>1 in stock</small> */}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className={Style.NFTCard_box_update_details_category}>
-                        <BsImages/>
+                        {/* <BsImages/> */}
                     </div>
                 </div>
             </div>

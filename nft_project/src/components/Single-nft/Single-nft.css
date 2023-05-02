@@ -1,0 +1,65 @@
+/* .{
+  margin-left: 50px;
+} */
+
+.img{
+  margin-right: 1000px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* .i{
+  width: 50px;
+} */
+
+.single{
+  background-color: black;
+}
+
+/* .i{
+  margin-left: 50px;
+} */
+
+.img{
+  margin: 10px;
+  height: 600px;
+  width: 600px;
+}
+
+.single
+{
+  width: 1290px;
+	margin-left: 270px;
+	display: flex;
+
+	background-color: black;
+	border: 1px solid lightgray;
+}
+.singleCol
+{
+  width: 50%;
+}
+
+.title{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.price{
+  display: flex;
+  font-size: 35px;
+  margin-left: 30px;
+}
+
+.creator{
+  display: flex;
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.des{
+  display: flex;
+  font-size: 30px;
+  margin-left: 30px;
+}

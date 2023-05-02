@@ -27,13 +27,8 @@ const Navbar = () => {
 						{/* </ul> */}
 					</li>
 					<li className="menu">
-						<a href="blog.html">Blog</a>
-						<ul className="secondary">
-							<li>
-                                <Link to="/single-nft">Single post</Link>
-								{/* <a href="singlepost.html">Single post</a> */}
-							</li>
-						</ul>
+						{/* <a href="blog.html">Blog</a> */}
+                        <Link to="/buy-nft">Buy-NFT</Link>
 					</li>
 					
 					<li>
