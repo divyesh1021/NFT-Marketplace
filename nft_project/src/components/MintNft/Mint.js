@@ -9,6 +9,7 @@ import { useAccount } from 'wagmi';
 import img from '../alien-life.jpg';
 import { NFTStorage, File, Blob } from 'nft.storage';
 import NFTCard from '../NFTCard/NFTCard';
+import SellCard from "../Sellcard/SellCard";
 
 
 // import ipfs from './ipfs';
@@ -214,9 +215,14 @@ const Mint = ({state}) => {
             // const Token_Uri = nft_list[i];
             // console.log('jhjbbhjbhhhhhhhhhhhhhhhhhhhhh',Token_Uri);
         }
-        // console.log('loooooooooooooooopppppppppppp',nftData);
     }
     console.log("nftttttttttttttt----",nftlist)
+
+    const ShowSell_NFT = async () => {
+
+    }
+
+
     return(
         
         <>
@@ -305,13 +311,16 @@ const Mint = ({state}) => {
                             <i class="fa-solid fa-bag-shopping"></i> Mint
                         </button>
                         </form>
+                        <button className="viewnft" type="submit" onClick={ShowSell_NFT}>OnSell</button>
                         <button className="viewnft" type="submit" onClick={Show_ownernft}>ShowNFT</button>
                     </div>
                     </Col>
                 </Row>
                 </Container>
             </section>
-            < NFTCard  state={ Img } />
+            < SellCard />
+
+            < NFTCard  state={ Img } contract={contract} />
 
             {/* {Img.map((d,i)=>{
                 <div>

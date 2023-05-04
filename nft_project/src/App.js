@@ -17,7 +17,7 @@ import Buy from './components/BuyNFT/Buy';
 // import NFTCard from './components/NFTCard/NFTCard';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 
-const chains = [arbitrum, mainnet, polygon, sepolia, bscTestnet];
+const chains = [bscTestnet, arbitrum, mainnet, polygon, sepolia];
 const projectId = 'ade8d95fae5b2c8d95db08d23496f064';
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);
@@ -34,7 +34,7 @@ function App() {
 
   useEffect( () => {
     const Get_Contract = async () => {
-      const contract_add = '0xc265A2229bF745b2Ec801971e4b8327533076C69';
+      const contract_add = '0xfeca7Eb4dDAaE816483Ad76fA6CB774fA89504a2';
       const contract_abi = Abi.abi;
       const { ethereum } = window;
       const provider = new ethers.providers.Web3Provider(ethereum);

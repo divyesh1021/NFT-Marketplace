@@ -4,16 +4,15 @@ import Style from './NFTCard.module.css';
 import { AiFillHeart , AiOutlineHeart } from 'react-icons/ai';
 import { BsImages } from 'react-icons/bs';
 // import Image from 'next/image';
-import img from '../alien-life.jpg';
+import img from './alien-life.jpg';
 import { Link } from 'react-router-dom';
-import Popup from '../Pop-up/Popup';
 
 
 // const { Id,setId } = useState();
 
-const NFTCard = (props) => {
+const SellCard = (props) => {
     // const featureArray = [1,2,3,4,5,6,7,8,9];
-    const [ sellpopup,setsellpopup ] = useState(false);
+    // const [ Id,setId ] = useState();
     const nftimg = props.state;
     
     // const id = nftimg.id;
@@ -36,16 +35,16 @@ const NFTCard = (props) => {
     
   return (
     <div className={Style.NFTCard}>
-        {nftimg.map((el,i)=>(
-            <div className={Style.NFTCard_box} key={i+1}>
+        {/* {nftimg.map((el,i)=>( */}
+            <div className={Style.NFTCard_box} >
                 <div className={Style.NFTCard_box_img}>
-                    <img src={el.imgUrl} alt="NFT images"  className={Style.NFTCard_box_img_img} />
+                    <img src={img} alt="NFT images"  className={Style.NFTCard_box_img_img} />
                 </div>
                 {/* <Link to="/single-nft">View NFT</Link> */}
 
                 {/* <a href="/single-nft"><button className={Style.viewNFT111}>View NFT</button></a> */}
-                <Link className={Style.viewNFT111} to={`/single-nft?${Number(el.id)}`} onClick={""}>View NFT</Link>
-                <button className={Style.sell} onClick={()=>{setsellpopup(true)}}>Sell</button>
+                {/* <Link className={Style.viewNFT111} to={`/single-nft?${Number(el.id)}`} onClick={""}>View NFT</Link> */}
+                {/* <button className={Style.sell}>Sell</button> */}
                 
                 <div className={Style.NFTCard_box_update}>
                     <div className={Style.NFTCard_box_update_left}>
@@ -60,8 +59,8 @@ const NFTCard = (props) => {
                     </div>
                     <div className={Style.NFTCard_box_update_right}>
                         <div className={Style.NFTCard_box_update_right_info}>
-                            {/* <small>Remaining time</small>
-                            <p>3h : 15m : 20s</p> */}
+                            <small style={{fontSize:"20px"}}>Sellend</small>
+                            <p>3h : 15m : 20s</p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +72,7 @@ const NFTCard = (props) => {
                             <div className={Style.NFTCard_box_update_details_price_box_box}>
                                 <div className={Style.NFTCard_box_update_details_price_box_bid}>
                                     {/* <small>Current Price</small> */}
-                                    <p>{Number(el.nftprice)} ETH</p>
+                                    {/* <p>{Number(el.nftprice)} ETH</p> */}
                                 </div>
                                 <div className={Style.NFTCard_box_update_details_price_box_stock}>
                                     {/* <small>1 in stock</small> */}
@@ -86,10 +85,9 @@ const NFTCard = (props) => {
                     </div>
                 </div>
             </div>
-        ))}
-        {sellpopup && <Popup setsellpopup={setsellpopup} nftimg={nftimg} contract={props.contract} />}
+        {/* ))} */}
     </div>
   )
 }
 
-export default NFTCard;
+export default SellCard;

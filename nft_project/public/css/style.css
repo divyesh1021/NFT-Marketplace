@@ -13,6 +13,11 @@ body #page {
 	width: auto;
 	z-index: 3;
 }
+
+#root{
+	background-color: black;
+}
+
 a {
 	text-decoration: none;
 	outline: none;
